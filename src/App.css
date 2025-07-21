@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/*Default*/
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito";
+}
+
+
+/*text-classes*/
+.text-preset-1{
+  font-size: 32px;
+  line-height: 137.5%;
+  letter-spacing: 0px;
+  font-weight: 800;
+}
+
+.text-preset-2{
+  font-size: 24px;
+  line-height: 137.5%;
+  letter-spacing: 0px;
+  font-weight: 800;
+}
+
+.text-preset-3{
+  font-size: 18px;
+  line-height: 145%;
+  letter-spacing: 0px;
+  font-weight: 800;
+}
+
+.text-preset-4-semi{
+  font-size: 16px;
+  line-height: 200%;
+  letter-spacing: 0px;
+  font-weight: 600;
+}
+
+.text-preset-4-light{
+  font-size: 16px;
+  line-height: 200%;
+  letter-spacing: 0px;
+  font-weight: 300;
+}
+
+.text-preset-5-regular{
+  font-size: 14px;
+  line-height: 145%;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.text-preset-5-light{
+  font-size: 14px;
+  line-height: 225%;
+  letter-spacing: 0px;
+  font-weight: 300;
+}
+
+.text-preset-6-semi{
+  font-size: 12px;
+  line-height: 135%;
+  letter-spacing: 0px;
+  font-weight: 600;
+}
+
+
+.text-preset-6-regular{
+  font-size: 12px;
+  line-height: 135%;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+.text-preset-6-light{
+  font-size: 12px;
+  line-height: 135%;
+  letter-spacing: 0px;
+  font-weight: 300;
+}
+
+/*Colors*/
+
+:root{
+  --grey-950: "#111517";
+  --grey-400: "#808080";
+  --grey-350: "#979797";
+  --grey-300: "#B2B2B2";
+  --grey-250: "#C4C4C4";
+  --grey-50: #FCFCFC;
+
+  --blue-950: #202C36;
+  --blue-900: #2B3844;
+}
+
