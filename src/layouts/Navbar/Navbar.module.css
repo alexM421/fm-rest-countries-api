@@ -1,0 +1,31 @@
+
+
+.navbar{
+    padding: 24px 80px;
+    background-color: var(--navbar-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 4px rgba(0,0,0,0.15);
+    z-index: 1;
+
+    &> h1{
+        color: var(--navbar-color)
+    }
+
+    &>.navbar-theme-toggle{
+        display: flex;
+        align-items: center;
+        color: var(--navbar-color);
+        gap: 8px;
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        &>svg{
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

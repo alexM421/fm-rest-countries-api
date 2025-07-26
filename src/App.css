@@ -8,6 +8,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Nunito";
+  transition: color ease 0.3s, background-color ease 0.3s;
 }
 
 
@@ -86,14 +87,36 @@
 /*Colors*/
 
 :root{
-  --grey-950: "#111517";
-  --grey-400: "#808080";
-  --grey-350: "#979797";
-  --grey-300: "#B2B2B2";
-  --grey-250: "#C4C4C4";
+  --grey-950: #111517;
+  --grey-400: #808080;
+  --grey-350: #979797;
+  --grey-300: #B2B2B2;
+  --grey-250: #C4C4C4;
   --grey-50: #FCFCFC;
-
   --blue-950: #202C36;
   --blue-900: #2B3844;
 }
 
+.light-mode{
+    --navbar-color: black;
+    --navbar-bg-color: white;
+
+    --home-bg-color: var(--grey-50);
+    --home-header-primary-color: var(--grey-950);
+    --home-header-secondary-color: var(--grey-400);
+    --home-header-bg-color: white;
+    --home-flag-card-bg-color: white;
+    --home-flag-card-color: var(--grey-950)
+}
+
+.dark-mode{
+    --navbar-color: white;
+    --navbar-bg-color: var(--blue-900);
+
+    --home-bg-color: var(--blue-950);
+    --home-header-primary-color: white;
+    --home-header-secondary-color: white;
+    --home-header-bg-color: var(--blue-900);
+    --home-flag-card-bg-color: var(--blue-900);
+    --home-flag-card-color: white;
+}
