@@ -2,7 +2,6 @@
 import styles from "./Home.module.css"
 //assets
 import Search from "../../assets/Search"
-import type { SetStateAction } from "react"
 // types
 type HomeSearchProps = {
     search: string,
