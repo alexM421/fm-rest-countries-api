@@ -17,7 +17,7 @@ export default function HomeFlagCard ({ data }:HomeFlagCardProps) {
             <div>
                 <h1 className="text-preset-3">{name.common}</h1>
                 <div>
-                    <p><span>Population:</span> {population}</p>
+                    <p><span>Population:</span> {population.toLocaleString("en-US")}</p>
                     <p><span>Region:</span> {region}</p>
                     <p><span>Capital:</span> {capital[0]}</p>
                 </div>
