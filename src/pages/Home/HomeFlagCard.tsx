@@ -1,7 +1,7 @@
 //CSS
 import styles from "./Home.module.css"
 //types
-import type { Country } from "../../contexts/dataContext"
+import type { Country } from "../../contexts/DataContext"
 
 type HomeFlagCardProps = {
     data: Country,
