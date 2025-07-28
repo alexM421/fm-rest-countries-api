@@ -26,7 +26,7 @@ export default function Home () {
             :data
                 .filter((countryData: Country) => countryData.name.common.toLowerCase().includes(search.toLowerCase()))
 
-        const countriesFlagCards = filteredData.map((countryData:Country) => <HomeFlagCard data={countryData}/>)
+        const countriesFlagCards = filteredData.map((countryData:Country) => <HomeFlagCard data={countryData} key={countryData.name.common.toLowerCase()}/>)
 
         return (
             <div>

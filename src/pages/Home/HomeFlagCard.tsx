@@ -12,7 +12,7 @@ export default function HomeFlagCard ({ data }:HomeFlagCardProps) {
     const { flags, population, name, region, capital } = data
 
     return(
-        <div className={styles["flag-card"]}>
+        <div className={styles["flag-card"]} key={`key-[${name.common.toLowerCase()}]`}>
             <img src={flags.svg} alt={flags.alt}/>
             <div>
                 <h1 className="text-preset-3">{name.common}</h1>
