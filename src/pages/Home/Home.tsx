@@ -2,39 +2,30 @@
 import { useDataContext } from "../../contexts/DataContext"
 import styles from "./Home.module.css"
 //React
-import { useState } from "react"
+import { useEffect, useState } from "react"
 //home
 import HomeFilter from "./HomeFilter"
 import HomeSearch from "./HomeSearch"
+import { getFilteredData } from "./HomeDisplayHandler"
 import HomeFlagCard from "./HomeFlagCard"
 //types
-import type { Country } from "../../contexts/DataContext"
 import type { JSX } from "react"
+import type { Country } from "../../contexts/DataContext"
+import HomePagination from "./HomePagination"
 
-export default function Home () {
+export default function Home ():JSX.Element {
 
     const data = useDataContext()
 
+    const [selectedPage, setSelectedPage] = useState<number>(1)
     const [selectedRegion, setSelectedRegion ] = useState<string>("All")
     const [search, setSearch] = useState<string>("")
 
-    const displayFlagCards = ():JSX.Element => {
-        
-        const filteredData = selectedRegion!=="All"
-            ?data
-                .filter((countryData: Country) => countryData.region.toLowerCase() === selectedRegion.toLowerCase() && countryData.name.common.includes(search))
-            :data
-                .filter((countryData: Country) => countryData.name.common.toLowerCase().includes(search.toLowerCase()))
+    const filteredData = getFilteredData(data, selectedRegion, search)
 
-        const countriesFlagCards = filteredData.map((countryData:Country) => <HomeFlagCard data={countryData}/>)
-
-        return (
-            <div>
-                {countriesFlagCards}
-            </div>
-        )
-                
-    }
+    useEffect(() => {
+        setSelectedPage(1)
+    },[search, selectedRegion])
 
     return(
         <div className={styles.home}>
@@ -43,8 +34,11 @@ export default function Home () {
                 <HomeFilter selectedRegion={selectedRegion} setSelectedRegion={setSelectedRegion}/>
             </div>
             <div className={styles["home-flags"]}>
-                {displayFlagCards()}
+                <div>
+                    {filteredData.slice((selectedPage-1)*10,selectedPage*10).map((countryData:Country) => <HomeFlagCard data={countryData} key={countryData.name.common}/>)}
+                </div>
             </div>
+            <HomePagination filteredData={filteredData} selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
         </div>
     )
 }

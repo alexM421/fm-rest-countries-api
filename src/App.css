@@ -106,7 +106,10 @@
     --home-header-secondary-color: var(--grey-400);
     --home-header-bg-color: white;
     --home-flag-card-bg-color: white;
-    --home-flag-card-color: var(--grey-950)
+    --home-flag-card-color: var(--grey-950);
+
+    --pagination-bg-color: white;
+    --pagination-color: var(--blue-950);
 }
 
 .dark-mode{
@@ -119,4 +122,7 @@
     --home-header-bg-color: var(--blue-900);
     --home-flag-card-bg-color: var(--blue-900);
     --home-flag-card-color: white;
+
+    --pagination-bg-color: var(--blue-900);
+    --pagination-color: white;
 }
