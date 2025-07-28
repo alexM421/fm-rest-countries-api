@@ -178,3 +178,25 @@
     }
 
 }
+
+.pagination{
+    display: flex;
+
+    &>.next, &>.previous{
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    &>.next>svg{
+        transform: rotate(-90deg);
+    }
+
+    &>.previous>svg{
+        transform: rotate(90deg);
+    }
+
+    &>.pagination-item{
+        
+    }
+}
