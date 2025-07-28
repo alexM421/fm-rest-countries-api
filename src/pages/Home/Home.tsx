@@ -1,5 +1,5 @@
 //CSS
-import { useDataContext } from "../../contexts/dataContext"
+import { useDataContext } from "../../contexts/DataContext"
 import styles from "./Home.module.css"
 //React
 import { useState } from "react"
@@ -8,7 +8,7 @@ import HomeFilter from "./HomeFilter"
 import HomeSearch from "./HomeSearch"
 import HomeFlagCard from "./HomeFlagCard"
 //types
-import type { Country } from "../../contexts/dataContext"
+import type { Country } from "../../contexts/DataContext"
 import type { JSX } from "react"
 
 export default function Home () {
@@ -26,7 +26,7 @@ export default function Home () {
             :data
                 .filter((countryData: Country) => countryData.name.common.toLowerCase().includes(search.toLowerCase()))
 
-        const countriesFlagCards = filteredData.slice(0,10).map((countryData:Country) => <HomeFlagCard data={countryData}/>)
+        const countriesFlagCards = filteredData.map((countryData:Country) => <HomeFlagCard data={countryData}/>)
 
         return (
             <div>
@@ -44,7 +44,6 @@ export default function Home () {
             </div>
             <div className={styles["home-flags"]}>
                 {displayFlagCards()}
-                
             </div>
         </div>
     )
