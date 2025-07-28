@@ -2,7 +2,7 @@
 import { useDataContext } from "../../contexts/DataContext"
 import styles from "./Home.module.css"
 //React
-import { useState } from "react"
+import { useEffect, useState } from "react"
 //home
 import HomeFilter from "./HomeFilter"
 import HomeSearch from "./HomeSearch"
@@ -22,7 +22,10 @@ export default function Home ():JSX.Element {
     const [search, setSearch] = useState<string>("")
 
     const filteredData = getFilteredData(data, selectedRegion, search)
-   
+
+    useEffect(() => {
+        setSelectedPage(1)
+    },[search, selectedRegion])
 
     return(
         <div className={styles.home}>
@@ -32,10 +35,10 @@ export default function Home ():JSX.Element {
             </div>
             <div className={styles["home-flags"]}>
                 <div>
-                    {filteredData.map((countryData:Country) => <HomeFlagCard data={countryData}/>)}
+                    {filteredData.slice((selectedPage-1)*10,selectedPage*10).map((countryData:Country) => <HomeFlagCard data={countryData} key={countryData.name.common}/>)}
                 </div>
-                <HomePagination filteredData={filteredData} selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
             </div>
+            <HomePagination filteredData={filteredData} selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
         </div>
     )
 }

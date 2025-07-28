@@ -1,11 +1,5 @@
-//CSS
-import styles from "./Home.module.css"
 //types
-import type { JSX } from "react"
 import type { Country } from "../../contexts/DataContext"
-//home
-import HomeFlagCard from "./HomeFlagCard"
-
 
 export function getFilteredData (data: Country[], selectedRegion: string, search: string):Country[]{
 
@@ -15,8 +9,8 @@ export function getFilteredData (data: Country[], selectedRegion: string, search
          :data
              .filter((countryData: Country) => countryData.name.common.toLowerCase().includes(search.toLowerCase()))
     
+    const sortedData = filteredData.sort((countryA, countryB) => countryA.name.common.localeCompare(countryB.name.common))
 
-
-    return filteredData
+    return sortedData
              
-    }
+}
