@@ -6,6 +6,7 @@ import './App.css'
 import HomeLayout from './layouts/HomeLayout/HomeLayout'
 //pages
 import Home from './pages/Home/Home'
+import CountryCard from './pages/CountryCard/CountryCard'
 
 export default function App() {
 
@@ -13,7 +14,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<HomeLayout/>}>
         <Route index element={<Home/>}/>
-        {/* <Route path=":country" element={<CountryPage/>}/> */}
+        <Route path=":country" element={<CountryCard/>}/>
       </Route>
     </Routes>
   )

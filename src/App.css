@@ -9,6 +9,7 @@
   box-sizing: border-box;
   font-family: "Nunito";
   transition: color ease 0.3s, background-color ease 0.3s;
+  text-decoration: none;
 }
 
 

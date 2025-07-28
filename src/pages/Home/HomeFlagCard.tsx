@@ -1,5 +1,9 @@
 //CSS
 import styles from "./Home.module.css"
+//react
+import { Link } from "react-router-dom"
+//utils
+import { slugify } from "../../utils/utils"
 //types
 import type { Country } from "../../contexts/DataContext"
 
@@ -11,8 +15,10 @@ export default function HomeFlagCard ({ data }:HomeFlagCardProps) {
 
     const { flags, population, name, region, capital } = data
 
+   
+
     return(
-        <div className={styles["flag-card"]} key={`key-[${name.common.toLowerCase()}]`}>
+        <Link className={styles["flag-card"]} to={`${slugify(name.common)}`}>
             <img src={flags.svg} alt={flags.alt}/>
             <div>
                 <h1 className="text-preset-3">{name.common}</h1>
@@ -22,6 +28,6 @@ export default function HomeFlagCard ({ data }:HomeFlagCardProps) {
                     <p><span>Capital:</span> {capital[0]}</p>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }

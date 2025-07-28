@@ -4,10 +4,11 @@ import styles from "./CountryCard.module.css"
 import Arrow from "../../assets/Arrow"
 //contexts
 import { useDataContext } from "../../contexts/DataContext"
+import { useLocation } from "react-router-dom"
 
 export default function CountryCard () {
 
-    console.log(useDataContext())
+    const location = useLocation()
     const { flags, population, name, region, capital } = useDataContext()
  
     
