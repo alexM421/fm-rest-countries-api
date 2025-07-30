@@ -3,16 +3,26 @@ import styles from "./CountryCard.module.css"
 //assets
 import Arrow from "../../assets/Arrow"
 //contexts
-import { useDataContext } from "../../contexts/DataContext"
-import { useLocation } from "react-router-dom"
+import { useDataContext, type CountryData } from "../../contexts/DataContext"
+//React Router
+import { useParams } from "react-router-dom"
+//CountryCard
+import Loading from "./Loading"
 
 export default function CountryCard () {
 
-    const location = useLocation()
-    const { flags, population, name, region, capital } = useDataContext()
- 
-    
-          
+    const country = useParams().country
+    const data = useDataContext()
+    const countryData = data.find((countryData: CountryData) => countryData.slug === country)
+
+    //handles loading
+    if(!countryData){
+        return(
+            <Loading/>
+        )
+    }
+    const { flags } = countryData 
+
     return(
         <div className={styles["country-card"]}>
             <div className={styles.back}>

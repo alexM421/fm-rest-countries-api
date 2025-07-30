@@ -33,13 +33,16 @@ export interface Country {
   population: number;
 }
 
+export type CountryData = Country & {
+  slug: string
+}
+
 type DataContextType =  
     | []
-    | Country[]
+    | CountryData[]
 const DataContext = createContext<DataContextType>([])
 
 export function DataProvider ({ children }:{children: ReactElement}) {
-    
 
     const [countriesData, setCountriesData] = useState<DataContextType>([])
 
@@ -49,7 +52,7 @@ export function DataProvider ({ children }:{children: ReactElement}) {
             const res = await fetch("https://restcountries.com/v3.1/all?fields=flags,population,name,tld,capital,region,subregion,languages,currencies,borders")
             const data = await res.json()
             const sluggedData = data.map((countryData:Country)=> ({...countryData, slug: slugify(countryData.name.common)}))
-            setCountriesData(data)
+            setCountriesData(sluggedData)
         }
 
         loadCountriesData()

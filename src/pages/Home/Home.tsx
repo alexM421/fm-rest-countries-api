@@ -16,7 +16,7 @@ import HomePagination from "./HomePagination"
 export default function Home ():JSX.Element {
 
     const data = useDataContext()
-
+    
     const [selectedPage, setSelectedPage] = useState<number>(1)
     const [selectedRegion, setSelectedRegion ] = useState<string>("All")
     const [search, setSearch] = useState<string>("")
