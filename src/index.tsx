@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 //App
 import App from './App.tsx'
 //contexts
-import { DataProvider } from './contexts/dataContext.tsx'
+import { DataProvider } from './contexts/DataContext.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
