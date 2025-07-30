@@ -31,6 +31,7 @@ export interface Country {
   };
   borders: string[];
   population: number;
+  tld: string[];
 }
 
 export type CountryData = Country & {

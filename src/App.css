@@ -111,6 +111,10 @@
 
     --pagination-bg-color: white;
     --pagination-color: var(--blue-950);
+
+    --country-card-bg-color: var(--grey-50);
+    --country-card-bg-secondary-color: white;
+    --country-card-main-color: var(--grey-950);
 }
 
 .dark-mode{
@@ -126,4 +130,8 @@
 
     --pagination-bg-color: var(--blue-900);
     --pagination-color: white;
+
+    --country-card-bg-color:var(--blue-950);
+    --country-card-bg-secondary-color: var(--blue-900);
+    --country-card-main-color: white;
 }
