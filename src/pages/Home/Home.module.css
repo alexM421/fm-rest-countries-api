@@ -10,11 +10,23 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
     }
 
 }
 
+@media screen and (max-width: 900px){
+    .home{
+        padding: 48px 40px;
+    }
+}
 
+@media screen and (max-width: 600px){
+    .home{
+        padding: 24px 16px;
+    }
+}
 
 .home-search{
     flex: 1;
@@ -184,6 +196,8 @@
     display: flex;
     gap: 16px;
     align-self: center;
+    flex-wrap: wrap;
+    justify-content: center;
 
     &>div{
         background-color: var(--pagination-bg-color);
