@@ -53,7 +53,7 @@ export default function CountryCard () {
                     </div>
                     <div>
                         <p>Border Countries:</p>
-                        {borders.map(border => <p className={`${styles["country-card-border"]} text-preset-5-light`}>{border}</p>)}
+                        {borders.map(border => <p className={`${styles["country-card-border"]} text-preset-5-light`} key={border}>{border}</p>)}
                     </div>
                 </div>
             </div>
