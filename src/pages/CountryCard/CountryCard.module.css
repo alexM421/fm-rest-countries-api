@@ -133,10 +133,6 @@
             
             &>.infos{
                 max-width: 560px;
-
-                &>div:first-of-type>div{
-                    
-                }
             }
         }
     
