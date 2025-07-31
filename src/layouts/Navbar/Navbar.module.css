@@ -29,3 +29,34 @@
         }
     }
 }
+
+
+@media  screen and (max-width: 900px) {
+    .navbar{
+        padding: 24px 40px;
+
+        &> h1{
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        &>.navbar-theme-toggle{
+            &>p{
+                font-size: 12px;
+                line-height: 135%;
+            }
+
+            &>svg{
+                width: 12px;
+                height: 11px;
+            }
+        }
+    }
+}
+
+@media  screen and (max-width: 900px) {
+    .navbar{
+        padding: 30px 16px;
+    }
+}
+
